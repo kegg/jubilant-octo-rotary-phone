@@ -42,6 +42,12 @@ public class Life extends JFrame implements ActionListener {
     menuItem.addActionListener(this);
     popupmenu.add(menuItem);
 
+    menuItem = new JMenuItem("Email");
+    menuItem.setMnemonic(VK_E);
+    menuItem.setActionCommand("email.view");
+    menuItem.addActionListener(this);
+    popupmenu.add(menuItem);
+    
     menuItem = new JMenuItem("Quit");
     menuItem.setMnemonic(VK_Q);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.META_MASK));
