@@ -22,7 +22,7 @@ class DocumentsFrame extends JInternalFrame {
   private HTMLEditorKit kit;
   
   private String[] files = {
-      "chat.html",
+      "chat-20020118.html",
       "letter.txt",
       "poem.txt"
   };
