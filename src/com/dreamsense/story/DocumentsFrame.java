@@ -14,9 +14,9 @@ import java.io.InputStream;
  * Created by kegg on 5/11/19 at 4:44 PM.
  * Project: Life
  */
-public class DocumentsFrame extends JInternalFrame {
+class DocumentsFrame extends JInternalFrame {
   
-  static final int xOffset = 30, yOffset = 30;
+  private static final int xOffset = 30, yOffset = 30;
   private JList<String> fileList;
   private JEditorPane document;
   private HTMLEditorKit kit;
@@ -27,7 +27,7 @@ public class DocumentsFrame extends JInternalFrame {
       "poem.txt"
   };
   
-  public DocumentsFrame() {
+  DocumentsFrame() {
     super("Documents",
         true,
         true,
@@ -80,7 +80,7 @@ public class DocumentsFrame extends JInternalFrame {
 
           StringBuilder sb = new StringBuilder();
     
-          int data = 0;
+          int data;
           char c;
       
           try {
