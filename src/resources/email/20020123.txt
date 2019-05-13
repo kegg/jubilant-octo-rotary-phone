@@ -1,0 +1,24 @@
+From:    Fred Jones
+To:      John Smith
+Date:    2002-01-23
+Subject: re: Game on Saturday?
+
+Sounds great! See you there!
+
+---
+
+From:    John Smith
+To:      Fred Jones
+Date:    2002-01-22
+Subject: re: Game on Saturday?
+
+You know it! I'll be there bright and early! This year we'll win for sure.
+
+---
+
+From:    Fred Jones
+To:      John Smith
+Date:    2002-01-22
+Subject: Game on Saturday?
+
+You coming to the game on Saturday? We really need you there!
