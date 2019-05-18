@@ -1,13 +1,16 @@
 package com.dreamsense.story;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.UIManager;
+import java.awt.Component;
 
 /**
  * Created by kegg on 5/11/19 at 7:17 PM.
  * Project: Life
  */
-public class DocumentListRenderer extends DefaultListCellRenderer{
+public class DocumentListRenderer extends DefaultListCellRenderer {
   
   
   @Override
