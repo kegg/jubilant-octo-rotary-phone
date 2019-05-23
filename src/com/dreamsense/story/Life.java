@@ -1,8 +1,10 @@
 package com.dreamsense.story;
 
+import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JToolBar;
@@ -18,6 +20,8 @@ import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static java.awt.event.KeyEvent.VK_E;
 import static java.awt.event.KeyEvent.VK_Q;
@@ -27,7 +31,7 @@ import static java.awt.event.KeyEvent.VK_V;
  * Created by kegg on 5/11/19 at 4:26 PM.
  * Project: Life
  */
-public class Life extends JFrame implements ActionListener {
+public class Life extends JFrame {
   
   private Desktop desktop;
   
@@ -49,7 +53,11 @@ public class Life extends JFrame implements ActionListener {
   private JToolBar createButtonPanel() {
     JToolBar toolbar = new JToolBar();
     toolbar.add(new JButton("Start"));
-    
+    toolbar.add(Box.createHorizontalGlue());
+  
+    JLabel timeLabel = new JLabel(new SimpleDateFormat("HH:mm:ss").format(new Date()));
+    toolbar.add(timeLabel);
+  
     return toolbar;
   }
   
@@ -59,20 +67,40 @@ public class Life extends JFrame implements ActionListener {
     JMenuItem menuItem = new JMenuItem("Documents");
     menuItem.setMnemonic(VK_V);
     menuItem.setActionCommand("documents.view");
-    menuItem.addActionListener(this);
+    menuItem.addActionListener(new ActionListener() {
+  
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        documentsView();
+        desktop.repaint();
+      }
+    });
     popupmenu.add(menuItem);
 
     menuItem = new JMenuItem("Email");
     menuItem.setMnemonic(VK_E);
     menuItem.setActionCommand("email.view");
-    menuItem.addActionListener(this);
+    menuItem.addActionListener(new ActionListener() {
+  
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        emailView();
+        desktop.repaint();
+      }
+    });
     popupmenu.add(menuItem);
     
     menuItem = new JMenuItem("Quit");
     menuItem.setMnemonic(VK_Q);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.META_MASK));
     menuItem.setActionCommand("quit");
-    menuItem.addActionListener(this);
+    menuItem.addActionListener(new ActionListener() {
+  
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        quit();
+      }
+    });
     popupmenu.add(menuItem);
 
     desktop.addMouseListener(new MouseAdapter() {
@@ -91,18 +119,6 @@ public class Life extends JFrame implements ActionListener {
       public void mouseClicked(MouseEvent e) {}
     });
     desktop.add(popupmenu);
-  }
-  
-  public void actionPerformed(ActionEvent e) {
-    if ("quit".equals(e.getActionCommand())) {
-      quit();
-    } else if ("documents.view".equals(e.getActionCommand())) {
-      documentsView();
-      desktop.repaint();
-    } else if ("email.view".equals(e.getActionCommand())) {
-      emailView();
-      desktop.repaint();
-    }
   }
   
   private void emailView() {

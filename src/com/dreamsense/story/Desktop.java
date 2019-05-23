@@ -31,15 +31,6 @@ public class Desktop extends JDesktopPane {
       super.paintComponent(g);
     } else {
       Graphics2D g2d = (Graphics2D)g;
-      
-      //scale the image to fit the size of the Panel
-      double mw = backImage.getWidth(null);
-      double mh = backImage.getHeight(null);
-      
-      double sw = getWidth() / mw;
-      double sh = getHeight() / mh;
-      
-      //g2d.scale(sw, sh);
       g2d.drawImage(backImage, 0, 0, this);
     }
   }
