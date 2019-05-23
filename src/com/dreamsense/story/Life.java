@@ -52,6 +52,7 @@ public class Life extends JFrame {
   
   private JToolBar createButtonPanel() {
     JToolBar toolbar = new JToolBar();
+    toolbar.setFloatable(false);
     toolbar.add(new JButton("Start"));
     toolbar.add(Box.createHorizontalGlue());
   
