@@ -1,12 +1,17 @@
 package com.dreamsense.story;
 
+import javax.swing.JButton;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
+import javax.swing.JToolBar;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
+import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
@@ -26,7 +31,7 @@ import static java.awt.event.KeyEvent.VK_V;
  */
 public class Life extends JFrame implements ActionListener {
   
-  private JDesktopPane desktop;
+  private Desktop desktop;
   
   private Life() {
     super("Life");
@@ -35,11 +40,19 @@ public class Life extends JFrame implements ActionListener {
     setBounds(inset, inset,
         screenSize.width - inset*2,
         screenSize.height - inset*2);
-    desktop = new JDesktopPane();
+    desktop = new Desktop();
     System.setProperty("apple.laf.useScreenMenuBar", "true");
-    setContentPane(desktop);
+    getContentPane().add(desktop, BorderLayout.CENTER);
+    getContentPane().add(createButtonPanel(), BorderLayout.SOUTH);
     createPopupMenu();
     desktop.setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
+  }
+  
+  private JToolBar createButtonPanel() {
+    JToolBar toolbar = new JToolBar();
+    toolbar.add(new JButton("Start"));
+    
+    return toolbar;
   }
   
   private void createPopupMenu() {
@@ -87,8 +100,10 @@ public class Life extends JFrame implements ActionListener {
       quit();
     } else if ("documents.view".equals(e.getActionCommand())) {
       documentsView();
+      desktop.repaint();
     } else if ("email.view".equals(e.getActionCommand())) {
       emailView();
+      desktop.repaint();
     }
   }
   
