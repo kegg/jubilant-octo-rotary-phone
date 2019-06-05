@@ -16,7 +16,7 @@ import java.io.InputStream;
 
 /**
  * Created by kegg on 5/11/19 at 4:44 PM.
- * Project: Life
+ * Project: jubilant-octo-rotary-phone
  */
 class DocumentsFrame extends JInternalFrame {
   

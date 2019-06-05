@@ -29,7 +29,7 @@ import static java.awt.event.KeyEvent.VK_V;
 
 /**
  * Created by kegg on 5/11/19 at 4:26 PM.
- * Project: Life
+ * Project: jubilant-octo-rotary-phone
  */
 public class Life extends JFrame {
   
@@ -91,6 +91,17 @@ public class Life extends JFrame {
     });
     popupmenu.add(menuItem);
     
+    menuItem = new JMenuItem("Test");
+    menuItem.setActionCommand("test.view");
+    menuItem.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        testView();
+        desktop.repaint();
+      }
+    });
+    popupmenu.add(menuItem);
+    
     menuItem = new JMenuItem("Quit");
     menuItem.setMnemonic(VK_Q);
     menuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.META_MASK));
@@ -120,6 +131,18 @@ public class Life extends JFrame {
       public void mouseClicked(MouseEvent e) {}
     });
     desktop.add(popupmenu);
+  }
+  
+  private void testView() {
+    TestFrame frame = new TestFrame();
+    frame.setVisible(true);
+    desktop.add(frame);
+  
+    try {
+      frame.setSelected(true);
+    } catch (java.beans.PropertyVetoException e) {
+      System.err.println("Error Selecting Frame");
+    }
   }
   
   private void emailView() {

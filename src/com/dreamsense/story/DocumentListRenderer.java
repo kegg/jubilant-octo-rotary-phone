@@ -8,7 +8,7 @@ import java.awt.Component;
 
 /**
  * Created by kegg on 5/11/19 at 7:17 PM.
- * Project: Life
+ * Project: jubilant-octo-rotary-phone
  */
 public class DocumentListRenderer extends DefaultListCellRenderer {
   

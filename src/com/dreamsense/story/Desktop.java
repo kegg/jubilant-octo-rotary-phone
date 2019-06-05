@@ -8,7 +8,7 @@ import java.awt.Image;
 
 /**
  * Created by kegg on 2019-05-22 at 22:32.
- * Project: Clicker
+ * Project: jubilant-octo-rotary-phone
  */
 public class Desktop extends JDesktopPane {
   private Image backImage = null; //member variable

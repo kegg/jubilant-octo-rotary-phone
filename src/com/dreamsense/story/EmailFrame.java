@@ -17,7 +17,7 @@ import java.io.InputStream;
 
 /**
  * Created by kegg on 5/11/19 at 10:52 PM.
- * Project: Life
+ * Project: jubilant-octo-rotary-phone
  */
 class EmailFrame extends JInternalFrame {
   
