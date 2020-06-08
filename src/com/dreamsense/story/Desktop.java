@@ -14,7 +14,7 @@ public class Desktop extends JDesktopPane {
   private Image backImage = null; //member variable
   
   public Desktop() {
-    setBackgroundImage("/resources/images/enterprise.jpg");
+    setBackgroundImage("/resources/images/ufp.jpg");
   }
   
   public void setBackgroundImage(String imageFileName) {
